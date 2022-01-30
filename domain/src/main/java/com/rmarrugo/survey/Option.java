@@ -10,7 +10,8 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class Option {
 
-    Long value;
+    Long id;
+    String value;
     String text;
 
 }

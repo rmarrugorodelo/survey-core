@@ -29,12 +29,13 @@ public class OptionEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    Long value;
+    String value;
     String text;
 
     public Option toDomain() {
         return Option
                 .builder()
+                .id(id)
                 .value(value)
                 .text(text)
                 .build();
@@ -43,6 +44,7 @@ public class OptionEntity implements Serializable {
     public static OptionEntity of(Option option) {
         return OptionEntity
                 .builder()
+                .id(option.getId())
                 .value(option.getValue())
                 .text(option.getText())
                 .build();

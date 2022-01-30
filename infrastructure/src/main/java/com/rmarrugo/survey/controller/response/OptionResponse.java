@@ -11,7 +11,7 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public final class OptionResponse {
 
-    Long value;
+    String value;
     String text;
 
     public static OptionResponse of(Option option) {

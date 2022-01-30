@@ -17,4 +17,11 @@ public final class Question {
     QuestionType type;
     List<Option> options;
 
+    public boolean isInvalid() {
+        if(QuestionType.MULTIPLE == type){
+            return options.isEmpty();
+        }
+        return false;
+    }
+
 }
