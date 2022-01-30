@@ -1,5 +1,9 @@
-package com.rmarrugo.survey;
+package com.rmarrugo.survey.faker;
 
+import com.rmarrugo.survey.Option;
+import com.rmarrugo.survey.Question;
+import com.rmarrugo.survey.QuestionType;
+import com.rmarrugo.survey.Survey;
 import lombok.experimental.UtilityClass;
 
 import java.util.Collections;
@@ -33,10 +37,14 @@ public class SurveyFaker {
                 .questions(
                         List.of(
                                 question(QuestionType.OPEN, Collections.emptyList()),
-                                question(QuestionType.MULTIPLE, Collections.emptyList())
+                                invalidQuestion()
                         )
                 )
                 .build();
+    }
+
+    public Question invalidQuestion() {
+        return  question(QuestionType.MULTIPLE, Collections.emptyList());
     }
 
     private Question question(QuestionType questionType, List<Option> options) {
