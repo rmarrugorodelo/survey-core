@@ -15,6 +15,13 @@ public final class Question {
     Long id;
     String text;
     QuestionType type;
-    List<Answer> answers;
+    List<Option> options;
+
+    public boolean isInvalid() {
+        if(QuestionType.MULTIPLE == type){
+            return options.isEmpty();
+        }
+        return false;
+    }
 
 }

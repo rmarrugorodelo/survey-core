@@ -17,4 +17,10 @@ public final class Survey {
     String description;
     List<Question> questions;
 
+    public boolean isValid() {
+        return this.questions
+                .parallelStream()
+                .noneMatch(Question::isInvalid);
+    }
+
 }
