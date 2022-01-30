@@ -1,8 +1,6 @@
 package com.rmarrugo.survey.controller.response;
 
-import com.rmarrugo.survey.Answer;
 import com.rmarrugo.survey.Question;
-import com.rmarrugo.survey.QuestionType;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -18,17 +16,17 @@ public final class QuestionResponse {
 
     String text;
     String type;
-    List<AnswerResponse> answers;
+    List<OptionResponse> options;
 
     public static QuestionResponse of(Question question) {
         return QuestionResponse
                 .builder()
                 .text(question.getText())
                 .type(question.getType().name())
-                .answers(
-                        question.getAnswers()
+                .options(
+                        question.getOptions()
                                 .stream()
-                                .map(AnswerResponse::of)
+                                .map(OptionResponse::of)
                                 .collect(Collectors.toList())
                 )
                 .build();

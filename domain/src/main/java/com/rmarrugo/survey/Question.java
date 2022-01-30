@@ -15,6 +15,6 @@ public final class Question {
     Long id;
     String text;
     QuestionType type;
-    List<Answer> answers;
+    List<Option> options;
 
 }

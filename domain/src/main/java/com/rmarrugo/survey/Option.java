@@ -8,10 +8,9 @@ import lombok.experimental.FieldDefaults;
 @Getter
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-public class Answer {
+public class Option {
 
-    Long id;
-    String questionId;
-    String value;
+    Long value;
+    String text;
 
 }
