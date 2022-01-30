@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: survey-core
+  profiles:
+    active: local
+
+server:
+  servlet:
+    context-path: "/survey-core"
