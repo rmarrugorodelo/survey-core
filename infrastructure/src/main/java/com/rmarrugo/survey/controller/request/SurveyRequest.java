@@ -13,7 +13,6 @@ import lombok.experimental.FieldDefaults;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
@@ -51,7 +50,7 @@ public final class SurveyRequest {
     @Builder
     @AllArgsConstructor
     @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-    private static final class QuestionRequest {
+    public static final class QuestionRequest {
 
         @NotBlank
         String text;
@@ -76,10 +75,10 @@ public final class SurveyRequest {
     @Builder
     @AllArgsConstructor
     @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-    private static final class OptionRequest {
+    public static final class OptionRequest {
 
-        @NotNull
-        Long value;
+        @NotBlank
+        String value;
 
         @NotBlank
         String text;
